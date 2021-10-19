@@ -6,6 +6,7 @@ package com.example.demo.student;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -33,6 +34,11 @@ public class StudentService{
         }
     
    public void addNewStudent(Student student){
-       System.out.println(student);
+       Optional<Student> studentOptional=  studentRepository.findStudentByEmail(student.getEmail());
+       if(studentOptional.isPresent()){
+           throw new IllegalStateException("email token");
+       }
+       
+       studentRepository.save(student);
    } 
 }
