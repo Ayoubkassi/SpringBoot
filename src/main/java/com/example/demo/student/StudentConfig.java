@@ -23,14 +23,12 @@ public class StudentConfig {
         return args-> {
            Student ayoub = new Student(
                 "AyoubKassi",
-                 21,
                  LocalDate.of(2000,7,2),
                  "ayoub.kassi@uit.ac.ma"
             );
            Student maroua = new Student(
     
                 "MarouaNufi",
-                 21,
                  LocalDate.of(2000,5,13),
                  "maroua.elazzaoui@uit.ac.ma"
             );

@@ -24,7 +24,7 @@ public class StudentController {
       //dependency injection
       @Autowired
       public StudentController(StudentService studentService){
-          this.studentService = new StudentService();
+          this.studentService = studentService;
       }
       
        
