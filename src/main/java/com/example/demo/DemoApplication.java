@@ -1,5 +1,13 @@
 package com.example.demo;
 
+import com.example.demo.student.Student;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,9 +21,21 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
         
+            
+       
+
+        
         @GetMapping
-        public String hello(){
-            return "Spring boot application";
+        public List<Student> hello(){
+            return List.of(
+                  new Student(
+                          1L,
+                          "AyoubKassi",
+                          21,
+                          LocalDate.of(2000,7,2),
+                          "ayoub.kassi@uit.ac.ma"
+                  )  
+            );
         }
 
 }
